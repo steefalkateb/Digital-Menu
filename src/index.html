@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Villa Rosa</title>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4e8ef7">
+
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- add for me  -->
+
+    <link rel="apple-touch-icon" href="assets/imgs/logo_icon.png">
+
+
+    <!-- cordova.js required for cordova apps (remove if not needed) -->
+    <script src="cordova.js"></script>
+
+    <!-- offline && home screen -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('service worker installed'))
+                .catch(err => console.error('Error', err));
+        }
+
+        // if (windows.navigator.standalone) {
+        //   alert('qqq')
+        // }
+
+        // if (windows.navigator.fullscreen) {
+        //   alert('fullscreen')
+        // }
+    </script>
+
+
+
+    <link href="build/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ///////////////////////////////////////////////////////// -->
+    <!-- custom splash screen (non-angular component) -->
+    <div id="splash-screen">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="71" height="45"
+      viewBox="0 0 71 45">
+      <image style="text-shadow: 0px 2px 1px #c8c8c8;" id="Layer_0" data-name="Layer 0" width="71"
+        height="35"
+        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAAAtCAQAAABW1r6oAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBBARCCb+rfRhAAAF4klEQVRYw73YeXBV9RXA8U9CWLIRZN9EHSslLUWGAhKggCBSKcZBQMC0AjrTAerIjNTK2DqdbjqCdWjZatUOlJkyhUJqlcFAyuawK1aW4oBIWGqgQIZKgJA8SP/o4/Xt75Go5697fufc3/3e3/3ds/wyLmmUfNNTRitwxQVnfGK/3d5Xlf4EORFaRiNxMhW43UATfSs4Uu+ILVbbqO7LxcmQReihxZ42NMxaZr53vgyczvoYYrBWKuxz0EGHXEELj/mldiG/Oms84+QXiVNkpvu1V6bUJ46qck29GoGgvYffGhnmf8IcK74YnNv9xBNYaa73E3rlW+y7Yfp1z3o5XZystGHGWqCLw562NqnfRdNUmx7SM81T4Pn0HtLkx+n5zfQHraw11gcpfa9b7yu+ETYyRJ134zs3jdDS+1gzLMYqj6tOcy1vsV7fMP2ayVbFc7z5vfOglVrYpDhtGOhpq1vC9Av6+TgVTmbKaTt5TQunTbkpGA6YG6G3Srah/4/TXZ+kHi/pgNmp4kccWeDDCP0hD6fGecXWUICPlQG+h7f96aZhuGRx1MhszVPhbJNruY4JrHNQ55UGwMAfHYnQB3ogFc5Sb7nNam3iWO/2bWy1pYE4NTEReWoqnEpPOm2gpQpirPdpjt+53kAcNqiJ0O9xW3IcTpiixhivy4+wZRiPKrsaDMN7DkfoHRWlwmG9WRhvtbZhtrv0xC6VjcCpsSdqZIAOxkQF4ygcfu85jPQ3PUK2/nKwO5StGyb7ovTuqvTyd2OS4fCiX6DIVhODI01cw/5GwYhZ2zvVe8GflXrNndHO4Sl0k4Dhco2Xa7erPrRXe2861SicdlF/U6alqu1x1bMedrzpofirA7/ypDo8Y4vReNsD9sa83fywii+1fBalZwZ/mHnKdbXy8pLLOeHGSFlkokrcba2VhgmojfI4o5MditPGiS7gMzQB9X7quiamW3M5FIRjU2ipUXaCCTZYEZNAqpUo86aFcQNnrORG6fUhwN22g1FKbwDFy+j73e8lV5FlknKbTdIqzB7wA8UecdB0eSlxOkfptaEuLBDaCAOsutw6EQ4XzTE6WPc1M9QKmzzv62Eeb+mj1BI7zNYlKU5hlH4qrCm8FroabF5iHNhoSZjW289t8xcPuTU07QwDnTTXEcuNU5ggW4+I0o+HrjL1DBt//PKDyavBEd6RhXoZEdNttMa7/hPU+5lusmwB+/zDARU+VaVaQHO5BlsgO2LWFz0XvBpoc0R03mpyMpx8H+mMgGV6GBRhO2aLctsdA20UG2tYWM6rUaepFjFz/su4YA7MU+6eCFvAE8lr5UVmgqe8YZRJRkT9TZX22Wyng86inT4G6a67tvJkB1e2Vo1LzvnYYbt9EAyqHSw0PuZ5rybHGWKzDBxVqA5fU2KyO2L8jttrh+0OBD9hntZaypYhQ42LzkUEw87GmRWbIPBGcpwsZYaDklB5WmCUEvdGFSNQp9qnKpxw0mmVqtSoFVAvUzPN5enqq/rrlzBifT9VYzPANpnY6d6IQqqXYcbqmyLuBNSqcw0ZmsUExGgpMzVVF3pKnkHo6mxEGXbGLsusU6lO2zhb9n+SqakWsmXL1iwFTKVHcypSt33NlBmGKiNj0ik01cVQo/XV7SY6/mg5ZErOnvS60A5KFeGI4UmKjTZ666W/Abql0UyGy1mv+03OGdLt0dtbaALe80gw0iSWlgoVmhpxEhZfTjvupC3+mhN6yXTPdzLN8iMdnfOYdSm9x/l1TMdQa5+zLvrMBf92wjHnVLrS8OOmrkpMUWiVZcpdTeB1q5+ZFjN6waPxX6Nxh3EFCo2UY7l/xrG2VuKHusWMV5iaqHX8fA9yw1dlgmkROfqGbDDD0US3NfQw7obkIvwdWrpLb98xQss43ue8YL76dCe/eZyWphrpvPOyFGing85xQThvuUXxjpgSS0M+Vr4JRrhP+yQ+e6yzwkepJ/u89k4bRYbro5N8zWWpF3DFBRV2Kncw3bOySJz/Asg5rGlW91mkAAAAAElFTkSuQmCC" />
+    </svg> -->
+        <img src="assets/imgs/logo_splash.png" style="width:200px;height: 200px;" />
+    </div>
+    <!-- ///////////////////////////////////////////////////////// -->
+
+    <!-- Ionic's root component and where the app will load -->
+    <ion-app></ion-app>
+
+    <!-- The polyfills js is generated during the build process -->
+    <script src="build/polyfills.js"></script>
+
+    <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+    <script src="build/vendor.js"></script>
+
+    <!-- The main bundle js is generated during the build process -->
+    <script src="build/main.js"></script>
+
+</body>
+
+</html>

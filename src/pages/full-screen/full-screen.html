@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-row>
+            <ion-col style="float:left;">
+                <ion-buttons>
+                    <button ion-button (click)="closeModal()" style="font-size: 25px;color: #f0efed ;display: block;
+              text-decoration: none;
+              display: inline;
+              /* margin-right: 8px; */
+              background-image:url(tabsquare.jpg);
+              background-repeat: no-repeat;
+              padding-top: 18px;
+              text-align:center;">
+            <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
+          </button>
+                </ion-buttons>
+            </ion-col>
+
+            <ion-col style="float:right;text-align: right;color: #f0efed;">
+                <h4 style="float: right">{{item.group_name}}</h4>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+    <div (swipe)="swipeEvent($event)">
+        <ion-card style="border: 6px solid#f0efed;">
+            <img src={{item.image}} />
+        </ion-card>
+
+        <ion-grid>
+            <ion-row style="font-size: 20px;">
+                <ion-col style="float:left;">
+                    <div style=" float:left;">{{ item.Description_EN }} </div>
+                </ion-col>
+
+                <ion-col style="float:right;text-align: right;">
+                    <div style="float:right;">{{ item.Description_AR }}</div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <hr>
+
+
+        <div style="right: 0px;text-align: right;padding-right: 10px;font-size: 20px;position: relative;">
+            <div *ngIf="unit_price">
+                <span style="color: red; margin-right: 8px">{{item.Price1}}</span>
+
+                <span>:&nbsp;</span>
+                <span>السعر</span>
+                <span> &nbsp;  &nbsp;  &nbsp;  &nbsp;</span>
+
+
+                <span>{{item.Unit1}}</span>
+            </div>
+
+            <div *ngIf="unit_price2">
+                <span style="color: red; margin-right: 8px">{{item.Price2}} </span>
+                <span>:&nbsp;</span>
+                <span>السعر</span>
+                <span> &nbsp;  &nbsp;  &nbsp;  &nbsp;</span>
+                <span>{{item.Unit2}}</span>
+            </div>
+
+            <div *ngIf="unit_price3">
+                <span style="color: red; margin-right: 8px">{{item.Price3}} </span>
+                <span>:&nbsp;</span>
+                <span>السعر</span>
+                <span> &nbsp;  &nbsp;  &nbsp;  &nbsp;</span>
+                <span>{{item.Unit3}}</span>
+            </div>
+
+            <div *ngIf="unit_price4">
+                <span style="color: red; margin-right: 8px">{{item.Price4}}</span>
+                <span>:&nbsp;</span>
+                <span>السعر</span>
+                <span> &nbsp;  &nbsp;  &nbsp;  &nbsp;</span>
+                <span>{{item.Unit4}}</span>
+            </div>
+        </div>
+
+        <div>
+            <p style="color: #424242;right: 0px; text-align: right; padding:0px 10px 0px 10px;font-size: 18px;position: relative;">
+                {{ item.note}} </p>
+        </div>
+        <div>
+            <p style="color: red;right: 0px; text-align: right; padding:0px 10px 0px 10px;font-size: 18px;position: relative;">
+                {{ item.Calories}} </p>
+        </div>
+    </div>
+
+</ion-content>

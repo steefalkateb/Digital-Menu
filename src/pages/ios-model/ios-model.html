@@ -1,0 +1,85 @@
+<!-- <ion-header>
+  <ion-navbar color="primary">
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content fullscreen class="bg-style">
+
+    <div class="name_ios" style="margin-top: 20px;font-size: 25px;">
+        للحصول على اسم وشعار المطعم على الشاشة الرئيسية اتبع الخطوات التالية
+    </div>
+    <div style="height: 100%;">
+        <div class="div_ios">
+            <img class="img_ios" src="assets/imgs/lolo.png" />
+        </div>
+
+        <div style="position: absolute;bottom: 0px;width: 100%">
+
+            <div style="text-align: center">
+                <img src="assets/imgs/logo512.png" style="width:80px;height: 80px;" />
+            </div>
+            <div class="name_ios">
+                حول البلاد لتقنية المعلومات
+            </div>
+            <ion-row>
+                <ion-col></ion-col>
+                <ion-col></ion-col>
+                <ion-col>
+                    <button ion-button (click)="openFacebook()" style="box-shadow: none;">
+            <ion-icon class="icon_ios" name="logo-facebook"></ion-icon>
+          </button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button (click)="inst()" style="box-shadow: none;">
+            <ion-icon class="icon_ios" name="logo-instagram"></ion-icon>
+          </button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button (click)="mail()" style="box-shadow: none;">
+            <ion-icon class="icon_ios" name="mail"></ion-icon>
+          </button>
+                </ion-col>
+                <ion-col></ion-col>
+                <ion-col></ion-col>
+            </ion-row>
+
+
+            <ion-row>
+
+                <ion-col></ion-col>
+                <ion-col></ion-col>
+                <ion-col></ion-col>
+
+                <ion-col>
+                    <ion-col>
+                        <button (click)="skip()" style="background-color:transparent;margin-bottom: 10px">
+
+                                    <span class="btn_ios">Skip</span>
+                                <br/>                           
+
+                                    <span class="name_ios_skip" >تخطي</span>
+                                    
+        
+                                  </button>
+                    </ion-col>
+                    <ion-col style="top: 10px;right: 10px;">
+                        <ion-icon name="ios-arrow-forward" style="margin-left: 5px;color: white;font-size: 18px;"></ion-icon>
+
+                    </ion-col>
+
+
+
+
+
+                </ion-col>
+            </ion-row>
+            <!-- <button ion-button (click)="skip()" style="box-shadow: none; float: right;margin-bottom: 10px;" class="btn_ios">
+        Skip  
+        <ion-icon name="ios-arrow-forward" style="margin-left: 5px;margin-top: 8px"></ion-icon>   
+        <label class="name_ios_skip">تخطي</label>
+     
+      </button> -->
+        </div>
+    </div>
+
+</ion-content>
