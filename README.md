@@ -39,8 +39,7 @@ A QR-code-based digital menu system for restaurants — customers scan a QR code
 | Angular | UI Components |
 | TypeScript | Programming Language |
 | SCSS | Styling |
-| MySQL | Database |
-| Laravel | Backend API |
+| Firebase | Database |
 
 ---
 
